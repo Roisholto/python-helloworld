@@ -4,7 +4,7 @@ import logging
 
 app = Flask(__name__)
 
-@app.route('/status')
+# @app.route('/status')
 def healthcheck():
     response = app.response_class(
             response=json.dumps({"result":"OK - healthy"}),
@@ -35,5 +35,5 @@ def hello():
 if __name__ == "__main__":
     ## stream logs to a file
     logging.basicConfig(filename='app.log',level=logging.DEBUG)
-    
+
     app.run(host='0.0.0.0')
